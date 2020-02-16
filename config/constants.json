@@ -1,0 +1,6 @@
+{
+  "ignoredFiles": [
+      "README.md"
+  ],
+  "uploadsFolder": "./uploads/"
+} 
