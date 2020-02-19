@@ -2,7 +2,7 @@ const fs = require("../utils/fs");
 const db = require("../db/files");
 const configFiles = require("../config/constants");
 
-const ignoredFiles = configFiles.ignoredFiles.map(item => item.toLowerCase());
+const ignoredFiles = configFiles.ignoredFiles;
 
 /**
  * Удаляет лишние файлы из папки
@@ -32,10 +32,7 @@ const deleteRedundantFiles = () => {
  */
 const compareFileNames = (filesFrommDb, filesFrommFS) => {
   let filesToDelete = filesFrommFS.filter(item => {
-    if (
-      !filesFrommDb.includes(item.toLowerCase()) &&
-      !ignoredFiles.includes(item.toLowerCase())
-    ) {
+    if (!filesFrommDb.includes(item) && !ignoredFiles.includes(item)) {
       return item;
     }
   });

@@ -10,7 +10,9 @@ const getAllFileNames = () => {
   return db
     .executeTheQuery(getAllFilesQuery)
     .then(rows => {
-      result = rows.map(item => item.ecg_record.toLowerCase());
+      result = rows
+        .map(item => item.ecg_record)
+        .filter(item => item != null);
       db.closeConnection();
     })
     .then(() => {
