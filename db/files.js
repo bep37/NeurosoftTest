@@ -1,6 +1,6 @@
 const db = require("./dbQuery");
 
-const getAllFilesQuery = "SELECT ecg_record FROM schema.training";
+const getAllFilesQuery = "SELECT ecg_record FROM training";
 
 /**
  * Получение всех имен файлов
